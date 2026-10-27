@@ -50,7 +50,7 @@ export function SiteFooter() {
       </div>
 
       <div className="border-t border-zinc-800">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-6 text-xs text-zinc-500 sm:flex-row sm:px-6">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-6 text-xs text-zinc-400 sm:flex-row sm:px-6">
           <p>© 2569 การไฟฟ้าส่วนภูมิภาค (PEA) สงวนลิขสิทธิ์</p>
           <p>เว็บไซต์ตัวอย่าง — ข้อมูลทั้งหมดเป็นข้อมูลจำลอง</p>
         </div>

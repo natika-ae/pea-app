@@ -1,10 +1,11 @@
 import Link from "next/link";
+import { NavLink } from "./nav-link";
 
 const navItems = [
   { href: "/", label: "หน้าแรก" },
   { href: "#courses", label: "หลักสูตร" },
   { href: "#categories", label: "หมวดหมู่" },
-  { href: "#about", label: "เกี่ยวกับเรา" },
+  { href: "/about", label: "เกี่ยวกับเรา" },
   { href: "#contact", label: "ติดต่อ" },
 ];
 
@@ -32,13 +33,13 @@ export function SiteHeader() {
 
         <nav className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => (
-            <Link
+            <NavLink
               key={item.href}
               href={item.href}
-              className="text-sm font-medium opacity-90 transition hover:text-amber-300 hover:opacity-100"
+              className="text-sm font-medium opacity-90 transition hover:text-amber-300 hover:opacity-100 aria-[current=page]:text-amber-300 aria-[current=page]:opacity-100"
             >
               {item.label}
-            </Link>
+            </NavLink>
           ))}
         </nav>
 
@@ -73,13 +74,13 @@ export function SiteHeader() {
           </summary>
           <nav className="absolute right-0 mt-2 w-56 rounded-xl bg-white p-2 text-zinc-800 shadow-xl">
             {navItems.map((item) => (
-              <Link
+              <NavLink
                 key={item.href}
                 href={item.href}
-                className="block rounded-lg px-3 py-2 text-sm hover:bg-purple-50"
+                className="block rounded-lg px-3 py-2 text-sm hover:bg-purple-50 aria-[current=page]:bg-purple-50 aria-[current=page]:font-semibold aria-[current=page]:text-purple-900"
               >
                 {item.label}
-              </Link>
+              </NavLink>
             ))}
             <hr className="my-2 border-zinc-200" />
             <Link
