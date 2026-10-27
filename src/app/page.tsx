@@ -53,7 +53,7 @@ export default async function Home() {
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:py-28">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-amber-300 ring-1 ring-white/20">
-              ⚡ เปิดรับสมัครหลักสูตรใหม่ ประจำปี 2569
+              ⚡ เรียน Online ได้ตลอด 24 ชั่วโมง
             </span>
             <h1 className="mt-6 text-4xl font-bold leading-tight sm:text-5xl">
               พัฒนาทักษะด้านไฟฟ้า
