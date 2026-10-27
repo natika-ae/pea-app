@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { Suspense } from "react";
+import { AuthMenu } from "./auth-menu";
 import { NavLink } from "./nav-link";
 
 const navItems = [
@@ -43,19 +45,11 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
-          <Link
-            href="#"
-            className="rounded-full px-4 py-2 text-sm font-medium transition hover:bg-white/10"
-          >
-            เข้าสู่ระบบ
-          </Link>
-          <Link
-            href="#"
-            className="rounded-full bg-amber-400 px-4 py-2 text-sm font-semibold text-purple-900 transition hover:bg-amber-300"
-          >
-            สมัครสมาชิก
-          </Link>
+        <div className="hidden md:block">
+          {/* Sized placeholder so the header doesn't shift while the session loads. */}
+          <Suspense fallback={<div className="h-9 w-52" />}>
+            <AuthMenu variant="desktop" />
+          </Suspense>
         </div>
 
         {/* Mobile menu without client JS */}
@@ -83,12 +77,9 @@ export function SiteHeader() {
               </NavLink>
             ))}
             <hr className="my-2 border-zinc-200" />
-            <Link
-              href="#"
-              className="block rounded-lg bg-purple-900 px-3 py-2 text-center text-sm font-semibold text-white"
-            >
-              เข้าสู่ระบบ
-            </Link>
+            <Suspense fallback={<div className="h-20" />}>
+              <AuthMenu variant="mobile" />
+            </Suspense>
           </nav>
         </details>
       </div>
